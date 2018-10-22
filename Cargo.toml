@@ -1,0 +1,24 @@
+[package]
+name = "bangbang-timed"
+version = "0.1.0"
+authors = ["Sean Bruton <sean@uberfoo.net>"]
+edition = "2018"
+description = "bang-bang controller that can optionally enforce minmum times in each state before transition is permitted"
+repository = "https://github.com/uber-foo/bangbang-timed"
+license = "MIT or Apache-2.0"
+keywords = ["bangbang", "bang-bang", "bang bang", "on-off", "on off", "flipflop", "flip-flop", "flip flop"]
+
+[dependencies]
+
+[dependencies.bangbang]
+path = "../bangbang"
+default-features = false
+features = ["on-off"]
+
+[dependencies.log]
+version = "0.4.5"
+optional = true
+
+[features]
+default = ["all_log"]
+all_log = ["log", "bangbang/log"]
